@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { LandingPageRoutingModule } from './landing-page-routing.module';
-import { MainMenuComponent } from './main-menu/main-menu.component';
 import { LandingPageComponent } from './landing-page.component';
 
 @NgModule({
@@ -10,6 +9,6 @@ import { LandingPageComponent } from './landing-page.component';
     CommonModule,
     LandingPageRoutingModule
   ],
-  declarations: [MainMenuComponent, LandingPageComponent]
+  declarations: [LandingPageComponent]
 })
 export class LandingPageModule { }
