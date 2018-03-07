@@ -1,0 +1,8 @@
+.error{
+    color: #e91e63;
+    background-color: pink;
+    width: 95%;
+    border-radius: 4px;
+    padding: 0.25em;
+    margin: 1em auto;
+}
