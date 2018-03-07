@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LandingPageModule } from './landing-page';
+import { CoreModule } from './core';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { LandingPageModule } from './landing-page';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LandingPageModule
+    LandingPageModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
