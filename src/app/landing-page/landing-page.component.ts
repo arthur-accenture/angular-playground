@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+  testString: string;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() { 
+    
   }
 
+  ngOnInit() {   
+    this.testString = 'Test string.';
+  }
 }
