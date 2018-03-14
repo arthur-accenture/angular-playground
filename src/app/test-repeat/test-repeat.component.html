@@ -1,3 +1,16 @@
+<h3>Straight forward string array</h3>
 <ol>
   <li *ngFor="let item of stringArray">{{item}}</li>
+</ol>
+<h3>String array with index</h3>
+<ol>
+  <li *ngFor="let item of stringArray; let i = index">{{item}} : {{i}}</li>
+</ol>
+<h3>String array with even and odd classes</h3>
+<ol>
+  <li *ngFor="let item of stringArray; let even = even; let odd = odd" [ngClass]="{odd: odd, even: even}">{{item}}</li>
+</ol>
+<h3>String array with first and last classes</h3>
+<ol>
+  <li *ngFor="let item of stringArray; let first = first; let last = last" [ngClass]="{first: first, last: last}">{{item}}</li>
 </ol>

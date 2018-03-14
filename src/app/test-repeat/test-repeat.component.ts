@@ -10,7 +10,7 @@ export class TestRepeatComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.stringArray = ['one', 'two', 'three'];
+    this.stringArray = ['one', 'two', 'three', 'four', 'five']
   }
 
 }
