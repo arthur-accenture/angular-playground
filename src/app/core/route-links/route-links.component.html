@@ -1,6 +1,6 @@
 <div class="routes-container">
-  <div>Any routes created are linked below (except for ** defaults)</div>
-  <div>
+  <div>Any routes created are automatically linked below (except for ** defaults)</div>
+  <div class="links-container">
     <a *ngFor="let route of routes" [routerLink]="route.path" >{{route.path}}</a>
   </div>
 </div>

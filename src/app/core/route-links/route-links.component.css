@@ -2,8 +2,16 @@ a{
     padding: 0.2em;
     background-color: white;
     margin: 0.2em;
+    text-decoration: initial;
+}
+a:hover{
+    background-color: silver;
+    color: darkblue;
 }
 .routes-container{
     background-color: lightblue;
     padding: 0.25em;
+}
+.links-container{
+    margin-top: 1em;
 }
