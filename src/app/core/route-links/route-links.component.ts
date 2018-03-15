@@ -12,7 +12,8 @@ export class RouteLinksComponent implements OnInit {
   constructor(private router: Router){
     // Return routes that aren't **
     this.routes = this.router.config.filter((route) => {return route.path && route.path != '**'});
-    console.log(this.routes);
+
+    console.log(this.router.url);
   }
   ngOnInit() {
   }

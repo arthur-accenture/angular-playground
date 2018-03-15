@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 
 import { LandingPageModule } from './landing-page';
 import { CoreModule } from './core';
-import { TestRepeatComponent } from './test-repeat/test-repeat.component';
 import { TestRepeatModule } from './test-repeat';
+import { PageNotFoundModule } from './page-not-found';
 
 
 @NgModule({
@@ -16,13 +16,13 @@ import { TestRepeatModule } from './test-repeat';
     AppComponent
   ],
   imports: [
+    CoreModule,
     BrowserModule,
     AppRoutingModule,
     LandingPageModule,
     TestRepeatModule,
-// Always load CoreModule last (as it has pagenotfound, a route which needs to have lowest priority).
-// If we need something in CoreModule loaded first, we should separate pagenotfound into its own module, and load last.
-    CoreModule
+// Always load PageNotFound last (as it has pagenotfound, a route which needs to have lowest priority).
+    PageNotFoundModule
   ],
   providers: [],
   bootstrap: [AppComponent]
