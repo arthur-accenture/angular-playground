@@ -9,6 +9,7 @@ import { LandingPageModule } from './landing-page';
 import { CoreModule } from './core';
 import { TestRepeatModule } from './test-repeat';
 import { PageNotFoundModule } from './page-not-found';
+import { TriviaModule } from './trivia';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { PageNotFoundModule } from './page-not-found';
     AppRoutingModule,
     LandingPageModule,
     TestRepeatModule,
+    TriviaModule,
 // Always load PageNotFound last (as it has pagenotfound, a route which needs to have lowest priority).
     PageNotFoundModule
   ],
