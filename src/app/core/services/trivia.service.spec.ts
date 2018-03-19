@@ -3,7 +3,7 @@ import { HttpRequest, HttpParams } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TriviaService } from './trivia.service';
 
-fdescribe('TriviaService', () => {
+describe('TriviaService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -36,9 +36,11 @@ fdescribe('TriviaService', () => {
     })
   ));
 
-  fit('should return some questions for getQuestions', async(inject([TriviaService, HttpTestingController],
+  it('should return some questions for getQuestions', async(inject([TriviaService, HttpTestingController],
     (service: TriviaService, backend: HttpTestingController) => {
       service.getQuestions().subscribe((next:any) => {
+        // TODO: Currently next is typed as any. We should probably create a type for response
+        // e.g. TriviaResult or Question
         let results = next && next.results;
         expect(next && next.results).toBeTruthy();
       });
