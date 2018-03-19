@@ -23,7 +23,7 @@ import { TriviaModule } from './trivia';
     LandingPageModule,
     TestRepeatModule,
     TriviaModule,
-// Always load PageNotFound last (as it has pagenotfound, a route which needs to have lowest priority).
+// Always load PageNotFound last (the route which needs to have lowest priority).
     PageNotFoundModule
   ],
   providers: [],
