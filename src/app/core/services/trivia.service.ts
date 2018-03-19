@@ -18,7 +18,6 @@ export class TriviaService {
   constructor(private http:HttpClient) { }
 
   public getQuestions(): Observable<Object>{
-    console.log('Service called!');
     let params = new HttpParams();
     params = params.append('amount', '10');
     params = params.append('category', '23');
