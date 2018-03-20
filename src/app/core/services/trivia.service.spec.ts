@@ -38,11 +38,12 @@ describe('TriviaService', () => {
 
   it('should return some questions for getQuestions', async(inject([TriviaService, HttpTestingController],
     (service: TriviaService, backend: HttpTestingController) => {
-      service.getQuestions().subscribe((next:any) => {
-        // TODO: Currently next is typed as any. We should probably create a type for response
+      service.getQuestions().subscribe((questions:any) => {
+        // TODO: Currently questions is typed as any. We should probably create a type for response
         // e.g. TriviaResult or Question
-        let results = next && next.results;
-        expect(next && next.results).toBeTruthy();
+        
+        expect(questions).toBeTruthy();
+        expect(questions.length).toBeGreaterThan(0);
       });
 
       // Create a mock response;

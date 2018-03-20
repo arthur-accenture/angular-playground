@@ -22,6 +22,11 @@ export class TriviaService {
     params = params.append('amount', '10');
     params = params.append('category', '23');
     return this.http.get('https://opentdb.com/api.php', {params: params})
+    .map((response:any) => response.results)  // Unwrap the results
+    .catch(error => {
+      console.error('Error in getQuestions', error);
+      return error;
+    });
   }
 
 }
