@@ -31,8 +31,6 @@ describe('TriviaService', () => {
       service.getQuestions(options).subscribe(); // No need to check response here
 
       backend.expectOne((request: HttpRequest<any>) => {
-        console.log('request', request);
-        console.log('params', request.params);
         return request.url == 'https://opentdb.com/api.php';
       }, `Stubbed GET for trivia questions.`);
     })
