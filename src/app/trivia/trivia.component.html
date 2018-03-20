@@ -1,3 +1,27 @@
+<form #triviaOptions="ngForm">
+  <div>
+    <h3>Select Options</h3>
+    <div>
+      <span>Number</span>
+      <input type="number" name="number" ngModel />
+    </div>
+    <div>
+      <span>Category</span>
+      <input type="number" name="category" ngModel />
+    </div>
+    <div>
+      <span>Difficulty</span>
+      <input type="text" name="difficulty" ngModel />
+    </div>
+    <div>
+      <span>Type</span>
+      <input type="text" name="type" ngModel />
+    </div>
+  </div>
+</form>
+<div>
+  <button (click)="getQuestions(triviaOptions)"></button>
+</div>
 <p>
   trivia works!
 </p>
