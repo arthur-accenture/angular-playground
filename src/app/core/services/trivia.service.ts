@@ -8,15 +8,19 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/of';
 
+// Models
+import { TriviaOptions } from '../models/trivia-options.model';
+
 @Injectable()
 export class TriviaService {
 
   constructor(private http:HttpClient) { }
 
-  public getQuestions(): Observable<Object>{
+  public getQuestions(options:TriviaOptions): Observable<Object>{
     let params = new HttpParams();
-    params = params.append('amount', '10');
-    params = params.append('category', '23');
+    for(let i in options){
+      params = params.append(i, options[i]);
+    }
     return this.http.get('https://opentdb.com/api.php', {params: params})
     .map((response:any) => response.results)  // Unwrap the results
     .catch(error => {

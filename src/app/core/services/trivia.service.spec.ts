@@ -2,6 +2,7 @@ import { TestBed, async, inject } from '@angular/core/testing';
 import { HttpRequest, HttpParams } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TriviaService } from './trivia.service';
+import { TriviaOptions } from '../models/trivia-options.model';
 
 describe('TriviaService', () => {
 
@@ -26,7 +27,8 @@ describe('TriviaService', () => {
 
   it('should call the correct URL for getQuestions', async(inject([TriviaService, HttpTestingController],
     (service: TriviaService, backend: HttpTestingController) => {
-      service.getQuestions().subscribe(); // No need to check response here
+      const options = <TriviaOptions>{amount: 10, category: 23}; 
+      service.getQuestions(options).subscribe(); // No need to check response here
 
       backend.expectOne((request: HttpRequest<any>) => {
         console.log('request', request);
@@ -38,7 +40,8 @@ describe('TriviaService', () => {
 
   it('should return some questions for getQuestions', async(inject([TriviaService, HttpTestingController],
     (service: TriviaService, backend: HttpTestingController) => {
-      service.getQuestions().subscribe((questions:any) => {
+      const options = <TriviaOptions>{amount: 10, category: 23}; 
+      service.getQuestions(options).subscribe((questions:any) => {
         // TODO: Currently questions is typed as any. We should probably create a type for response
         // e.g. TriviaResult or Question
         
