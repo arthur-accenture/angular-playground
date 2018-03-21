@@ -3,6 +3,6 @@ export interface TriviaQuestion {
     correctAnswer: string,
     difficulty: string,
     answers: Array<string>,
-    question: string,
+    text: string,
     type: string
 }

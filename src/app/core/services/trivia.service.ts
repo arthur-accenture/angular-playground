@@ -31,7 +31,7 @@ export class TriviaService {
           correctAnswer: question.correct_answer,
           difficulty: question.difficulty,
           answers: question.incorrect_answers,
-          question: question.question,
+          text: question.question,
           type: question.type
         }
         // Generate random index to push correct answer into
