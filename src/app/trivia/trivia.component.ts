@@ -24,7 +24,7 @@ export class TriviaComponent implements OnInit {
 
   ngOnInit() {    
     this.triviaOptions = <TriviaOptions>{
-      number: 10
+      amount: 10
     };
     this.types = [
       {id: '', display: ''},
