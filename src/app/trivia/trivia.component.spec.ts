@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { TriviaComponent } from './trivia.component';
+import { TriviaService } from '../core/services/trivia.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('TriviaComponent', () => {
   let component: TriviaComponent;
@@ -8,10 +10,11 @@ describe('TriviaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ FormsModule  ],
-      declarations: [ TriviaComponent ]
+      imports: [FormsModule, HttpClientTestingModule],
+      declarations: [TriviaComponent],
+      providers: [TriviaService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
