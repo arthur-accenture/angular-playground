@@ -1,4 +1,17 @@
-.container{
+/* Page layout */
+.trivia-container{
+    display: flex;
+    flex-direction: column;
+    height: 76vh;
+}
+fieldset{
+    flex: 1;
+    overflow: auto;
+}
+
+
+/* Form */
+form{
     padding: 3em 1em;
     display: flex;
     justify-content: space-between
