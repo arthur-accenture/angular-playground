@@ -25,7 +25,7 @@ export class TriviaService {
     console.log('PARAMS:', params);
     return this.http.get('https://opentdb.com/api.php', {params: params})
     .map((response:any) => {
-      return response.results.map((question, i) => {
+      return <TriviaQuestion[]>response.results.map((question, i) => {
         let output:TriviaQuestion = {
           category: question.category,
           correctAnswer: question.correct_answer,

@@ -3,6 +3,7 @@ import { TriviaOptions, TriviaType } from '../core/models/trivia-options.model';
 import { NgForm } from '@angular/forms';
 import { SelectOption } from '../core/models/select-option.model';
 import { TriviaService } from '../core/services/trivia.service';
+import { TriviaQuestion } from '../core/models/trivia-questions.model';
 
 
 
@@ -16,8 +17,8 @@ export class TriviaComponent implements OnInit {
   types: Array<SelectOption>;
   difficulties: Array<SelectOption>;
   categories: Array<SelectOption>;
-
-
+  questions: Array<TriviaQuestion>;
+  
   constructor(private triviaService:TriviaService) {
 
   }
@@ -47,7 +48,7 @@ export class TriviaComponent implements OnInit {
   getQuestions(){
     console.log(this.triviaOptions);
     this.triviaService.getQuestions(this.triviaOptions).subscribe(data => {
-      console.log(data);
+      this.questions = <TriviaQuestion[]> data;
     });
   };
 
