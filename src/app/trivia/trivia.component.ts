@@ -18,6 +18,8 @@ export class TriviaComponent implements OnInit {
   difficulties: Array<SelectOption>;
   categories: Array<SelectOption>;
   questions: Array<TriviaQuestion>;
+  answersSubmitted: boolean;
+  round: number = 0;
   
   constructor(private triviaService:TriviaService) {
 
@@ -49,7 +51,19 @@ export class TriviaComponent implements OnInit {
     console.log(this.triviaOptions);
     this.triviaService.getQuestions(this.triviaOptions).subscribe(data => {
       this.questions = <TriviaQuestion[]> data;
-    });
+      this.answersSubmitted = false;  
+      this.round++;
+    });  
+    
   };
+
+  checkAnswers(){
+    // Go through questions and "mark"
+    this.questions = this.questions.map(question => {
+      question.isCorrect = question.selectedAnswer === question.correctAnswer;
+      return question;
+    });
+    this.answersSubmitted = true;
+  }
 
 }

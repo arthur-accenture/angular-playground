@@ -24,15 +24,18 @@
     </div>
   </div>
   <div class="button-container">
-      <button (click)="getQuestions()">Get Questions</button>
+      <button (click)="getQuestions()" *ngIf="answersSubmitted || round == 0">Get Questions</button>
+      <button (click)="checkAnswers()" *ngIf="!answersSubmitted && round > 0">Check Answers</button>
     </div>
 </form>
 
-<div class="question-container">
-  <div class="question" *ngFor="let question of questions">
+<div class="question-container" *ngIf="round > 0">
+  <fieldset [disabled]="answersSubmitted">
+  <div class="question" *ngFor="let question of questions, let questionNumber = index;">
     <div class="text">{{question.text}}</div>
     <div class="answers">
-      <div *ngFor="let answer of question.answers">{{answer}}</div>
+      <div [ngClass]="{correctAnswer: answersSubmitted && question.correctAnswer == answer, correct: answersSubmitted && question.selectedAnswer == answer && question.isCorrect, incorrect: answersSubmitted && question.selectedAnswer == answer && question.isCorrect == false}" *ngFor="let answer of question.answers; let i = index"><label [for]="question.id + '_' + i"><input type="radio" [name]="question.id" [id]="question.id + '_' + i" [value]="answer" [(ngModel)]="question.selectedAnswer" />{{answer}}</label></div>
     </div>
   </div>
+  </fieldset>
 </div>

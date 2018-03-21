@@ -23,6 +23,7 @@
 .button-container{
     display: flex;
     justify-content: flex-end;
+    flex-direction: column;
 }
 .button-container button {
     border-radius: 0.1em;
@@ -31,6 +32,7 @@
     font-size: 2em;
     border: 1px solid #62823d;
     color: white;
+    margin: 0.2em;
 }
 .button-container button:hover{
     background-color: #2f6d32;
@@ -47,4 +49,19 @@
 .question .text{
     margin-bottom: 0.3em;
     font-size: 1.1em;
+}
+
+
+/* Marking */
+.correct::after{
+    content: "\2713";
+    margin-left: 0.5em;
+    color: green;
+    font-weight: bold;
+}
+.incorrect::after{
+    content: "\2717";
+    margin-left: 0.5em;
+    font-weight: bold;
+    color: red;
 }
