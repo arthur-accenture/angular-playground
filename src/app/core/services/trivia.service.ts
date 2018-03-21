@@ -27,7 +27,7 @@ export class TriviaService {
     .map((response:any) => {
       return <TriviaQuestion[]>response.results.map((question, i) => {
         let output:TriviaQuestion = {
-          id: new Date().getTime(),
+          id: new Date().getTime() + '_' + i,
           category: question.category,
           correctAnswer: question.correct_answer,
           difficulty: question.difficulty,
