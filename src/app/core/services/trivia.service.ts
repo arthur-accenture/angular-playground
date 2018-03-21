@@ -47,10 +47,7 @@ export class TriviaService {
         let parser = new DOMParser();
         output.correctAnswer = parser.parseFromString(output.correctAnswer, 'text/html').body.textContent;
         output.text = parser.parseFromString(output.text, 'text/html').body.textContent;
-        for(let answer in output.answers){
-          answer = parser.parseFromString(answer, 'text/html').body.textContent
-        }
-        console.log(typeof output.answers);
+        output.answers = output.answers.map(answer => parser.parseFromString(answer, 'text/html').body.textContent);
 
         return output;
       });
