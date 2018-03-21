@@ -5,5 +5,6 @@ export interface TriviaQuestion {
     difficulty: string,
     answers: Array<string>,
     text: string,
-    type: string
+    type: string,
+    selectedAnswer?: string
 }
