@@ -39,5 +39,12 @@
 
 
 .question{
-    margin: 1em;
+    margin: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.question .text{
+    margin-bottom: 0.3em;
+    font-size: 1.1em;
 }
