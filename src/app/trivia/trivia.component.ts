@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TriviaOptions } from '../core/models/trivia-options.model';
+import { TriviaOptions, TriviaType } from '../core/models/trivia-options.model';
 import { NgForm } from '@angular/forms';
+import { SelectOption } from '../core/models/select-option.model';
+
+
 
 @Component({
   selector: 'app-trivia',
@@ -9,15 +12,35 @@ import { NgForm } from '@angular/forms';
 })
 export class TriviaComponent implements OnInit {
   triviaOptions: TriviaOptions;
+  types: Array<SelectOption>;
+  difficulties: Array<SelectOption>;
+  categories: Array<SelectOption>;
+
   constructor() { }
 
   ngOnInit() {    
-    this.triviaOptions = <TriviaOptions>{};
+    this.triviaOptions = <TriviaOptions>{
+      number: 10
+    };
+    this.types = [
+      {id: '', display: ''},
+      {id: 'multiple', display: 'Multiple Choice'},
+      {id: 'boolean', display: 'True / False'},
+    ];
+    this.difficulties = [
+      {id: '', display: ''},
+      {id: 'easy', display: 'Easy'},
+      {id: 'medium', display: 'Medium'},
+      {id: 'hard', display: 'Hard'},
+    ];
+    this.categories = [
+      {id: 21, display: 'Sport'},
+      {id: 22, display: 'Geography'},
+      {id: 23, display: 'History'},
+    ];
   }
   
-  getQuestions(triviaOptions: NgForm){
-    this.triviaOptions = triviaOptions.value;
-    console.log(triviaOptions.value);
+  getQuestions(){
     console.log(this.triviaOptions);
   };
 

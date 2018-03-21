@@ -1,0 +1,37 @@
+.container{
+    padding: 3em 1em;
+    display: flex;
+    justify-content: space-between
+}
+.form-group{
+    display: flex;
+    padding: 0.5em 1em;
+    justify-content: space-between;
+}
+.form-control{
+    text-align: right;
+    width: 8em;
+}
+
+
+.form-control{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+}
+.button-container button {
+    border-radius: 0.1em;
+    width: 6em;
+    background-color: #4CAF50;
+    font-size: 2em;
+    border: 1px solid #62823d;
+    color: white;
+}
+.button-container button:hover{
+    background-color: #2f6d32;
+    cursor: pointer;
+}

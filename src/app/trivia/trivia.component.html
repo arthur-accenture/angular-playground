@@ -1,27 +1,33 @@
-<form #triviaOptions="ngForm">
+<form #triviaOptionsForm="ngForm" class="container">
   <div>
-    <h3>Select Options</h3>
-    <div>
-      <span>Number</span>
-      <input type="number" name="number" ngModel />
+    <div class="form-group">
+      <label for="number">Number of Questions</label>
+      <input class="form-control" type="number" id="number" name="number" [(ngModel)]="triviaOptions.number" />
     </div>
-    <div>
-      <span>Category</span>
-      <input type="number" name="category" ngModel />
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select class="form-control" id="category" name="category" [(ngModel)]="triviaOptions.category" >
+        <option *ngFor="let option of categories" [value]="option.id">{{option.display}}</option>
+      </select>
     </div>
-    <div>
-      <span>Difficulty</span>
-      <input type="text" name="difficulty" ngModel />
+    <div class="form-group">
+      <label for="difficulty">Difficulty</label>
+      <select class="form-control" id="difficulty" name="difficulty" [(ngModel)]="triviaOptions.difficulty" >
+        <option *ngFor="let option of difficulties" [value]="option.id">{{option.display}}</option>
+      </select>
     </div>
-    <div>
-      <span>Type</span>
-      <input type="text" name="type" ngModel />
+    <div class="form-group">
+      <label for="type">Type of Questions</label>
+      <select class="form-control" id="type" name="type" [(ngModel)]="triviaOptions.type" >        
+        <option *ngFor="let option of types" [value]="option.id">{{option.display}}</option>
+      </select>
     </div>
   </div>
+  <div class="button-container">
+      <button (click)="getQuestions()">Get Questions</button>
+    </div>
 </form>
-<div>
-  <button (click)="getQuestions(triviaOptions)"></button>
-</div>
+
 <p>
   trivia works!
 </p>
