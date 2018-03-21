@@ -10,7 +10,8 @@ a:hover{
 }
 .routes-container{
     background-color: lightblue;
-    padding: 0.25em;
+    padding: 0.8em;
+    border-radius: 0.2em;
 }
 .links-container{
     margin-top: 1em;
