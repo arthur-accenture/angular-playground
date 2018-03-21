@@ -6,5 +6,6 @@ export interface TriviaQuestion {
     answers: Array<string>,
     text: string,
     type: string,
-    selectedAnswer?: string
+    selectedAnswer?: string,
+    isCorrect?: boolean
 }
