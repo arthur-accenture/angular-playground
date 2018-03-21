@@ -3,6 +3,7 @@ import { HttpRequest, HttpParams } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TriviaService } from './trivia.service';
 import { TriviaOptions } from '../models/trivia-options.model';
+import { TriviaQuestion } from '../models/trivia-questions.model';
 
 describe('TriviaService', () => {
 
@@ -48,6 +49,18 @@ describe('TriviaService', () => {
       });
 
       // Create a mock response;
+      let mockQuestion = {
+        "category": "Sports",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "How many soccer players should be on the field at the same time?",
+        "correct_answer": "22",
+        "incorrect_answers": [
+            "20",
+            "24",
+            "26"
+        ]
+      }
 
       // backend.expectOne('https://opentdb.com/api.php')
       // Not doing line above as it matches the whole URL (with parameters) rather than just base url
@@ -57,7 +70,7 @@ describe('TriviaService', () => {
       backend.expectOne((request: HttpRequest<any>) => {
         return request.url === 'https://opentdb.com/api.php' && request.method === 'GET';
       }, `Stubbed GET for trivia questions.`)      
-      .flush({results: [{"category": "History"}]},  {status: 200, statusText: 'Ok'});
+      .flush({results: [mockQuestion]},  {status: 200, statusText: 'Ok'});
     })
   ))
 });
