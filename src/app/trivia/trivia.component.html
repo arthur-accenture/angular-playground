@@ -28,6 +28,11 @@
     </div>
 </form>
 
-<p>
-  trivia works!
-</p>
+<div class="question-container">
+  <div class="question" *ngFor="let question of questions">
+    <div class="text">{{question.text}}</div>
+    <div class="answers">
+      <div *ngFor="let answer of question.answers">{{answer}}</div>
+    </div>
+  </div>
+</div>

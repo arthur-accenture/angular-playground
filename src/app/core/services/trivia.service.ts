@@ -22,7 +22,7 @@ export class TriviaService {
     for(let i in options){
       params = params.append(i, options[i]);
     }
-    console.log('PARAMS:', params);
+
     return this.http.get('https://opentdb.com/api.php', {params: params})
     .map((response:any) => {
       return <TriviaQuestion[]>response.results.map((question, i) => {
@@ -42,7 +42,16 @@ export class TriviaService {
         else if(output.type === 'boolean'){
           output.answers = ['True', 'False'];
         }
-        
+
+        // Decode
+        let parser = new DOMParser();
+        output.correctAnswer = parser.parseFromString(output.correctAnswer, 'text/html').body.textContent;
+        output.text = parser.parseFromString(output.text, 'text/html').body.textContent;
+        for(let answer in output.answers){
+          answer = parser.parseFromString(answer, 'text/html').body.textContent
+        }
+        console.log(typeof output.answers);
+
         return output;
       });
     })  // Unwrap the results
