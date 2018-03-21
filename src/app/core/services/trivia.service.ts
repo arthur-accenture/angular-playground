@@ -27,6 +27,7 @@ export class TriviaService {
     .map((response:any) => {
       return <TriviaQuestion[]>response.results.map((question, i) => {
         let output:TriviaQuestion = {
+          id: new Date().getTime(),
           category: question.category,
           correctAnswer: question.correct_answer,
           difficulty: question.difficulty,
@@ -49,6 +50,8 @@ export class TriviaService {
         output.text = parser.parseFromString(output.text, 'text/html').body.textContent;
         output.answers = output.answers.map(answer => parser.parseFromString(answer, 'text/html').body.textContent);
 
+        console.log(output);
+        
         return output;
       });
     })  // Unwrap the results

@@ -1,4 +1,5 @@
 export interface TriviaQuestion {
+    id: number,
     category: string,
     correctAnswer: string,
     difficulty: string,
