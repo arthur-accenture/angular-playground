@@ -34,7 +34,7 @@
   <div class="question" *ngFor="let question of questions, let questionNumber = index;">
     <div class="text">{{question.text}}</div>
     <div class="answers">
-      <div [ngClass]="{correctAnswer: answersSubmitted && question.correctAnswer == answer, correct: answersSubmitted && question.selectedAnswer == answer && question.isCorrect, incorrect: answersSubmitted && question.selectedAnswer == answer && question.isCorrect == false}" *ngFor="let answer of question.answers; let i = index"><label [for]="question.id + '_' + i"><input type="radio" [name]="question.id" [id]="question.id + '_' + i" [value]="answer" [(ngModel)]="question.selectedAnswer" />{{answer}}</label></div>
+      <div [ngClass]="{'correct-answer': !question.isCorrect && answersSubmitted && question.correctAnswer == answer, correct: answersSubmitted && question.selectedAnswer == answer && question.isCorrect, incorrect: answersSubmitted && question.selectedAnswer == answer && question.isCorrect == false}" *ngFor="let answer of question.answers; let i = index"><label [for]="question.id + '_' + i"><input type="radio" [name]="question.id" [id]="question.id + '_' + i" [value]="answer" [(ngModel)]="question.selectedAnswer" />{{answer}}</label></div>
     </div>
   </div>
   </fieldset>

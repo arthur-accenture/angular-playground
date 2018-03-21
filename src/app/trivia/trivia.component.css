@@ -65,3 +65,10 @@
     font-weight: bold;
     color: red;
 }
+.correct-answer::after{
+    content: "\2190   Correct answer";
+    margin-left: 0.5em;
+    font-weight: bold;
+    font-size: 1.1em;
+    line-height: 1.6em;
+}
