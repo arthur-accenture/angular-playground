@@ -10,6 +10,7 @@ import 'rxjs/add/observable/of';
 
 // Models
 import { TriviaOptions } from '../models/trivia-options.model';
+import { TriviaQuestion } from '../models/trivia-questions.model';
 
 @Injectable()
 export class TriviaService {
@@ -21,8 +22,32 @@ export class TriviaService {
     for(let i in options){
       params = params.append(i, options[i]);
     }
+    console.log('PARAMS:', params);
     return this.http.get('https://opentdb.com/api.php', {params: params})
-    .map((response:any) => response.results)  // Unwrap the results
+    .map((response:any) => {
+      console.log('RESPONSE:', response);
+      debugger;
+      return response.results.map((question, i) => {
+        let output:TriviaQuestion = {
+          category: question.category,
+          correctAnswer: question.correct_answer,
+          difficulty: question.difficulty,
+          answers: question.incorrect_answers,
+          question: question.question,
+          type: question.type
+        }
+        // Generate random index to push correct answer into
+        if(output.type === 'multiple'){
+          let index:number = Math.floor(Math.random() * (i + 1));
+          output.answers.splice(index, 0, question.correct_answer);
+        }
+        else if(output.type === 'boolean'){
+          output.answers = ['True', 'False'];
+        }
+        
+        return output;
+      });
+    })  // Unwrap the results
     .catch(error => {
       console.error('Error in getQuestions', error);
       return error;
