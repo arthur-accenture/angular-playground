@@ -41,9 +41,31 @@ export class TriviaComponent implements OnInit {
       {id: 'hard', display: 'Hard'},
     ];
     this.categories = [
+      {id: 9, display: ''},
+      {id: 10, display: 'General Knowledge'},
+      {id: 11, display: 'Entertainment: Books'},
+      {id: 12, display: 'Entertainment: Film'},
+      {id: 13, display: 'Entertainment: Music'},
+      {id: 14, display: 'Entertainment: Musicals & Theatres'},
+      {id: 15, display: 'Entertainment: TV'},
+      {id: 16, display: 'Entertainment: Video Games'},
+      {id: 17, display: 'Entertainment: Board Games'},
+      {id: 18, display: 'Science and Nature'},
+      {id: 19, display: 'Computers'},
+      {id: 20, display: 'Math'},
       {id: 21, display: 'Sport'},
       {id: 22, display: 'Geography'},
       {id: 23, display: 'History'},
+      {id: 24, display: 'Politics'},
+      {id: 25, display: 'Art'},
+      {id: 26, display: 'Celebrities'},
+      {id: 27, display: 'Animals'},
+      {id: 28, display: 'Vehicles'},
+      {id: 29, display: 'Enterainment: Comics'},
+      {id: 30, display: 'Gadgets'},
+      {id: 31, display: 'Entertainment: Anime'},
+      {id: 32, display: 'Entertainment: Cartoons and Animations'},
+      
     ];
   }
   
