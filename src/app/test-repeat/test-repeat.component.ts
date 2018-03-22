@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test-repeat.component.css']
 })
 export class TestRepeatComponent implements OnInit {
-  private stringArray : Array<string>;
+  stringArray : Array<string>;
   constructor() { }
 
   ngOnInit() {
