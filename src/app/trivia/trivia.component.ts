@@ -41,18 +41,19 @@ export class TriviaComponent implements OnInit {
       {id: 'hard', display: 'Hard'},
     ];
     this.categories = [
-      {id: 9, display: ''},
-      {id: 10, display: 'General Knowledge'},
-      {id: 11, display: 'Entertainment: Books'},
-      {id: 12, display: 'Entertainment: Film'},
-      {id: 13, display: 'Entertainment: Music'},
-      {id: 14, display: 'Entertainment: Musicals & Theatres'},
-      {id: 15, display: 'Entertainment: TV'},
-      {id: 16, display: 'Entertainment: Video Games'},
-      {id: 17, display: 'Entertainment: Board Games'},
-      {id: 18, display: 'Science and Nature'},
-      {id: 19, display: 'Computers'},
-      {id: 20, display: 'Math'},
+      {id: '', display: ''},
+      {id: 9, display: 'General Knowledge'},
+      {id: 10, display: 'Entertainment: Books'},
+      {id: 11, display: 'Entertainment: Film'},
+      {id: 12, display: 'Entertainment: Music'},
+      {id: 13, display: 'Entertainment: Musicals & Theatres'},
+      {id: 14, display: 'Entertainment: TV'},
+      {id: 15, display: 'Entertainment: Video Games'},
+      {id: 16, display: 'Entertainment: Board Games'},
+      {id: 17, display: 'Science and Nature'},
+      {id: 18, display: 'Computers'},
+      {id: 19, display: 'Math'},
+      {id: 20, display: 'Mythology'},
       {id: 21, display: 'Sport'},
       {id: 22, display: 'Geography'},
       {id: 23, display: 'History'},
@@ -85,6 +86,7 @@ export class TriviaComponent implements OnInit {
       question.isCorrect = question.selectedAnswer === question.correctAnswer;
       return question;
     });
+    console.log('Questions', this.questions);
     this.answersSubmitted = true;
   }
 
