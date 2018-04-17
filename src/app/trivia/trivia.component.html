@@ -1,4 +1,11 @@
 <div class="trivia-container">
+    <section *ngIf="lastRoundStats" class="last-round-stats">
+        <h5>Previous:</h5>
+        <ul>
+            <li *ngIf="lastRoundStats.category"><label>Category: </label><span> {{lastRoundStats.category}}</span></li>
+            <li><label>Score: </label><span> {{lastRoundStats.mark}} / {{lastRoundStats.outOf}}</span></li>
+        </ul>
+    </section>
     <form #triviaOptionsForm="ngForm" class="container">
         <fieldset class="options" [disabled]="!answersSubmitted && round > 0">
             <div class="form-group">
@@ -29,6 +36,7 @@
             <button (click)="checkAnswers()" *ngIf="!answersSubmitted && round > 0">Check Answers</button>
         </div>
     </form>
+
     <fieldset class="questions" [disabled]="answersSubmitted" *ngIf="round > 0">
         <div class="question" *ngFor="let question of questions, let questionNumber = index;">
             <div class="text">{{question.text}}</div>

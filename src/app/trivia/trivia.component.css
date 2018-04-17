@@ -117,3 +117,18 @@ fieldset.options {
     font-size: 1.1em;
     line-height: 1.6em;
 }
+
+section.last-round-stats {
+    background-color: aliceblue;
+    color: darkblue;
+    font-family: Helvetica;
+    padding: 0 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+section.last-round-stats li {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
