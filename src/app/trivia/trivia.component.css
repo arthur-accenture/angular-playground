@@ -10,6 +10,7 @@ fieldset {
     flex: 1;
     overflow: auto;
     border: 1px solid silver;
+    min-height: 200px;
 }
 
 
@@ -18,7 +19,8 @@ fieldset {
 form {
     padding: 3em 1em;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    min-height: 140px;
 }
 
 .form-group {
