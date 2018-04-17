@@ -1,6 +1,6 @@
 <div class="trivia-container">
     <form #triviaOptionsForm="ngForm" class="container">
-        <div>
+        <fieldset class="options" [disabled]="!answersSubmitted && round > 0">
             <div class="form-group">
                 <label for="number">Number of Questions</label>
                 <input class="form-control" type="number" id="number" name="number" [(ngModel)]="triviaOptions.amount" />
@@ -23,13 +23,13 @@
           <option *ngFor="let option of types" [value]="option.id">{{option.display}}</option>
         </select>
             </div>
-        </div>
+        </fieldset>
         <div class="button-container">
             <button (click)="getQuestions()" *ngIf="answersSubmitted || round == 0">Get Questions</button>
             <button (click)="checkAnswers()" *ngIf="!answersSubmitted && round > 0">Check Answers</button>
         </div>
     </form>
-    <fieldset [disabled]="answersSubmitted" *ngIf="round > 0">
+    <fieldset class="questions" [disabled]="answersSubmitted" *ngIf="round > 0">
         <div class="question" *ngFor="let question of questions, let questionNumber = index;">
             <div class="text">{{question.text}}</div>
             <div class="answers">

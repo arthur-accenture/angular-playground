@@ -75,7 +75,7 @@ form {
 
 /* Numbers in :before - https://css-tricks.com/numbering-in-style/*/
 
-fieldset {
+fieldset.questions {
     counter-reset: question-number;
 }
 
@@ -87,6 +87,10 @@ fieldset {
     display: inline-block;
     font-size: 1.6em;
     color: silver;
+}
+
+fieldset.options {
+    border: none;
 }
 
 
