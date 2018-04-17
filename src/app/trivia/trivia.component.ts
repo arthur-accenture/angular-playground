@@ -102,7 +102,6 @@ export class TriviaComponent implements OnInit {
       }, 0),
       outOf: this.triviaOptions.amount,
       category: category && category.display,
-      difficulty: this.triviaOptions.difficulty,
     }
     console.log('Last round:', this.lastRoundStats);
   }
