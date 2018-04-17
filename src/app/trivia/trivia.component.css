@@ -1,43 +1,49 @@
 /* Page layout */
-.trivia-container{
+
+.trivia-container {
     display: flex;
     flex-direction: column;
     height: 76vh;
 }
-fieldset{
+
+fieldset {
     flex: 1;
     overflow: auto;
 }
 
 
 /* Form */
-form{
+
+form {
     padding: 3em 1em;
     display: flex;
     justify-content: space-between
 }
-.form-group{
+
+.form-group {
     display: flex;
     padding: 0.5em 1em;
     justify-content: space-between;
 }
-.form-control{
+
+.form-control {
     text-align: right;
     width: 8em;
     margin: 0.1em 1em;
 }
 
-
-.form-control{
+.form-control {
     border-top: none;
     border-right: none;
     border-left: none;
 }
-.button-container{
+
+.button-container {
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
 }
+
 .button-container button {
     border-radius: 0.1em;
     width: 6em;
@@ -47,38 +53,60 @@ form{
     color: white;
     margin: 0.2em;
 }
-.button-container button:hover{
+
+.button-container button:hover {
     background-color: #2f6d32;
     cursor: pointer;
 }
 
-
-.question{
-    margin: 1.2em;
+.question {
+    margin: 1.5em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.question .text{
+
+.question .text {
     margin-bottom: 0.3em;
+    margin-left: 0.5em;
     font-size: 1.1em;
 }
 
 
+/* Numbers in :before - https://css-tricks.com/numbering-in-style/*/
+
+fieldset {
+    counter-reset: question-number;
+}
+
+.question:before {
+    content: counter(question-number);
+    counter-increment: question-number;
+    margin-left: -0.7em;
+    margin-bottom: -1em;
+    display: inline-block;
+    font-size: 1.6em;
+    color: silver;
+}
+
+
 /* Marking */
-.correct::after{
+
+.correct::after {
     content: "\2713";
     margin-left: 0.5em;
     color: green;
     font-weight: bold;
 }
-.incorrect::after{
+
+.incorrect::after {
     content: "\2717";
     margin-left: 0.5em;
     font-weight: bold;
     color: red;
 }
-.correct-answer::after{
+
+.correct-answer::after {
     content: "\2190   Correct answer";
     margin-left: 0.5em;
     font-weight: bold;
