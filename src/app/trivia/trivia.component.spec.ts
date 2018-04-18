@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { TriviaComponent } from './trivia.component';
-import { TriviaService } from '../core/services/trivia.service';
+import { TriviaService } from '../core/services';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('TriviaComponent', () => {

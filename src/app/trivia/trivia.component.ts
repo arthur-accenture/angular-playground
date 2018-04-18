@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TriviaOptions, TriviaType } from '../core/models/trivia-options.model';
 import { NgForm } from '@angular/forms';
-import { SelectOption } from '../core/models/select-option.model';
-import { TriviaService } from '../core/services/trivia.service';
-import { TriviaQuestion } from '../core/models/trivia-questions.model';
-import { TriviaStat } from '../core/models/trivia-stat.model';
+import { TriviaService } from '../core/services';
+import { SelectOption, TriviaQuestion, TriviaStat } from '../core/models';
 
 
 
