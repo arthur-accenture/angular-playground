@@ -17,9 +17,9 @@ describe('PageNotFoundComponent', () => {
         {
           provide: ActivatedRoute,
           useValue: {
-            url: {
-              value: 'test value'
-            },
+              snapshot: {
+                url: [{path: 'test'}]
+              }
           },
         }
       ]
